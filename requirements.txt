@@ -5,3 +5,5 @@ geopandas
 pandas
 plotly.express
 fiona
+requests
+io
