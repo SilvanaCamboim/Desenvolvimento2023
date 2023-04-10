@@ -2,3 +2,5 @@ streamlit
 folium
 streamlit_folium
 geopandas
+pandas
+plotly.express
