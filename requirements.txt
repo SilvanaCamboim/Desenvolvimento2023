@@ -4,6 +4,6 @@ streamlit_folium
 geopandas
 pandas
 plotly.express
-fiona
+io
 
 
