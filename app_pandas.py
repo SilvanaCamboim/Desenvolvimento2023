@@ -19,12 +19,12 @@ reponses.append(response_estacionamentos)
 
 # Check if the request was successful
 for response in responses:
-	if response.status_code == 200:
-  		  # Read the GeoJSON file using geopandas
-    		polygons = gpd.read_file(StringIO(response_bairros.text))
-    		points = gpd.read_file(StringIO(response_estacionamentos.text))
-	else:
-    	st.error(f"Error: {response.status_code} - Could not download the GeoJSON file.")
+    if response.status_code == 200:
+        # Read the GeoJSON file using geopandas
+        polygons = gpd.read_file(StringIO(response_bairros.text))
+        points = gpd.read_file(StringIO(response_estacionamentos.text))
+    else:
+        st.error(f"Error: {response.status_code} - Could not download the GeoJSON file.")
 
 PAGE_CONFIG = {"page_title":"Aplicação de Mapas com Pandas","page_icon":":smiley:","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
