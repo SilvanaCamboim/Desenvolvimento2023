@@ -44,7 +44,7 @@ def main():
     st.plotly_chart(f)
 
     # Mapa com Folium
-    m = folium.Map(location=[-25.5, -49.3], tiles='Stamen Terrain', zoom_start=11)
+    m = folium.Map(location=[-25.5, -49.3], zoom_start=11)
     folium.Choropleth(
         geo_data=bairros_finais.to_json(),
         name='estacionamentos por bairro',
