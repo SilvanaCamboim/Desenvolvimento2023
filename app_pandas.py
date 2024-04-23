@@ -10,18 +10,21 @@ from io import StringIO
 # URL of the GeoJSON file in the GitHub repository
 url_bairros = 'https://github.com/SilvanaCamboim/Desenvolvimento2023/blob/main/bairros.geojson'
 url_estacionamentos = 'https://github.com/SilvanaCamboim/Desenvolvimento2023/blob/main/estacionamentos.geojson'
-
+responses =[]
 # Download the GeoJSON file using requests
 response_bairros = requests.get(url_bairros)
+reponses.append(response_bairros)
 response_estacionamentos = requests.get(url_estacionamentos)
+reponses.append(response_estacionamentos)
 
 # Check if the request was successful
-if response.status_code == 200:
-    # Read the GeoJSON file using geopandas
-    polygons = gpd.read_file(StringIO(response_bairros.text))
-    points = gpd.read_file(StringIO(response_estacionamentos.text))
-else:
-    st.error(f"Error: {response.status_code} - Could not download the GeoJSON file.")
+for response in responses:
+	if response.status_code == 200:
+  		  # Read the GeoJSON file using geopandas
+    		polygons = gpd.read_file(StringIO(response_bairros.text))
+    		points = gpd.read_file(StringIO(response_estacionamentos.text))
+	else:
+    	st.error(f"Error: {response.status_code} - Could not download the GeoJSON file.")
 
 PAGE_CONFIG = {"page_title":"Aplicação de Mapas com Pandas","page_icon":":smiley:","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
