@@ -18,15 +18,6 @@ try:
 except Exception as e:
     print(f"Erro ao ler os arquivos GeoJSON: {e}")
 
-# Check if the request was successful
-for response in responses:
-    if response.status_code == 200:
-        # Read the GeoJSON file using geopandas
-        polygons = gpd.read_file(response_bairros)
-        points = gpd.read_file(response_estacionamentos)
-    else:
-        st.error(f"Error: {response.status_code} - Could not download the GeoJSON file.")
-
 PAGE_CONFIG = {"page_title":"Aplicação de Mapas com Pandas","page_icon":":smiley:","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
 
