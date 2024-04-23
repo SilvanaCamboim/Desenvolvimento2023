@@ -13,7 +13,7 @@ url_estacionamentos = 'https://github.com/SilvanaCamboim/Desenvolvimento2023/blo
 responses = []
 # Download the GeoJSON file using requests
 response_bairros = requests.get(url_bairros)
-reponses.append(response_bairros)
+responses.append(response_bairros)
 response_estacionamentos = requests.get(url_estacionamentos)
 reponses.append(response_estacionamentos)
 
