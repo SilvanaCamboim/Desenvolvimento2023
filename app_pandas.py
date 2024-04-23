@@ -12,8 +12,8 @@ url_estacionamentos = 'https://raw.githubusercontent.com/SilvanaCamboim/Desenvol
 
 # Usando geopandas para ler diretamente das URLs
 try:
-    bairros = gpd.read_file(url_bairros)
-    estacionamentos = gpd.read_file(url_estacionamentos)
+    polygons = gpd.read_file(url_bairros)
+    points = gpd.read_file(url_estacionamentos)
     print("Arquivos lidos com sucesso!")
 except Exception as e:
     print(f"Erro ao ler os arquivos GeoJSON: {e}")
