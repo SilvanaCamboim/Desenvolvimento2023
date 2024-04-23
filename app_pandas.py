@@ -10,7 +10,7 @@ from io import StringIO
 # URL of the GeoJSON file in the GitHub repository
 url_bairros = 'https://github.com/SilvanaCamboim/Desenvolvimento2023/blob/main/bairros.geojson'
 url_estacionamentos = 'https://github.com/SilvanaCamboim/Desenvolvimento2023/blob/main/estacionamentos.geojson'
-responses =[]
+responses = []
 # Download the GeoJSON file using requests
 response_bairros = requests.get(url_bairros)
 reponses.append(response_bairros)
