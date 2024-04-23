@@ -7,15 +7,16 @@ import plotly.express as px
 import requests
 from io import StringIO
 
-# URL of the GeoJSON file in the GitHub repository
-url_bairros = 'https://github.com/SilvanaCamboim/Desenvolvimento2023/blob/main/bairros.geojson'
-url_estacionamentos = 'https://github.com/SilvanaCamboim/Desenvolvimento2023/blob/main/estacionamentos.geojson'
-responses = []
-# Download the GeoJSON file using requests
-response_bairros = requests.get(url_bairros)
-responses.append(response_bairros)
-response_estacionamentos = requests.get(url_estacionamentos)
-responses.append(response_estacionamentos)
+url_bairros = 'https://raw.githubusercontent.com/SilvanaCamboim/Desenvolvimento2023/main/bairros.geojson'
+url_estacionamentos = 'https://raw.githubusercontent.com/SilvanaCamboim/Desenvolvimento2023/main/estacionamentos.geojson'
+
+# Usando geopandas para ler diretamente das URLs
+try:
+    bairros = gpd.read_file(url_bairros)
+    estacionamentos = gpd.read_file(url_estacionamentos)
+    print("Arquivos lidos com sucesso!")
+except Exception as e:
+    print(f"Erro ao ler os arquivos GeoJSON: {e}")
 
 # Check if the request was successful
 for response in responses:
