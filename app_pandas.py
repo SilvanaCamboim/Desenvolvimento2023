@@ -15,7 +15,7 @@ responses = []
 response_bairros = requests.get(url_bairros)
 responses.append(response_bairros)
 response_estacionamentos = requests.get(url_estacionamentos)
-reponses.append(response_estacionamentos)
+responses.append(response_estacionamentos)
 
 # Check if the request was successful
 for response in responses:
