@@ -21,8 +21,8 @@ responses.append(response_estacionamentos)
 for response in responses:
     if response.status_code == 200:
         # Read the GeoJSON file using geopandas
-        polygons = gpd.read_file(StringIO(response_bairros.text))
-        points = gpd.read_file(StringIO(response_estacionamentos.text))
+        polygons = gpd.read_file(response_bairros)
+        points = gpd.read_file(response_estacionamentos)
     else:
         st.error(f"Error: {response.status_code} - Could not download the GeoJSON file.")
 
