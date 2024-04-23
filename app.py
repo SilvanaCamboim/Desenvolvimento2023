@@ -15,7 +15,7 @@ def main():
 	elif choice == 'Mapa':
 		st.subheader("Visualizar Mapa")
 		with st.echo():
-			m = folium.Map (location = [-25.5,-49.3], zoom_start =  11)
+			m = folium.Map (location = [-25.5,-49.3], zoom_start =  9)
 			folium_static(m)
 	else: 
 		st.subheader("")
